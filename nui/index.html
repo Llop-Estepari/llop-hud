@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>HUD</title>
+</head>
+<body>
+  <div class="status">
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="health-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-heart-3-line"></i>
+    </div>
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="armor-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-shield-line"></i>
+    </div>
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="hunger-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-restaurant-line"></i>
+    </div>
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="thirst-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-drinks-2-line"></i>
+    </div>
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="stamina-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-run-line"></i>
+    </div>
+    <div class="bar-panel">
+      <div class="bar-content">
+        <div class="progress-bar" id="oxygen-bar"></div>
+      </div>
+      <i class="bar-content bar-icon ri-lungs-line"></i>
+    </div>
+
+  </div>
+
+  <div id="vehicle" class="">
+    <div class="vehicle-info">
+      <div class="extra-vehicle-info">
+        <i id="light-status" class="ri-eye-close-fill"></i>
+        <i id="engine-status" class="ri-tools-fill"></i>
+        <i id="lock-status" class="ri-lock-fill"></i>
+      </div>
+      <div>
+        <div class="extra-container">
+          <i class="ri-settings-3-fill"></i>
+          <div>
+            <span id="gear">R</span>
+            <span class="bg-text">0</span>
+          </div>
+        </div>
+        <div id="fuel-info" class="extra-container">
+          <i class="ri-gas-station-fill"></i>
+          <div>
+            <span id="fuel-data">99</span>
+            <span class="bg-text">00</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="rpm-container">
+          <span id="rpm"></span>
+        </div>
+      </div>
+      <div class="speedometer">
+        <span class="bg-text">000</span>
+        <span id="speed">000</span>
+      </div>
+    </div>
+    <div id="time-info" class="hidden">
+      <i class="ri-time-line"></i><span id="time-data"></span>
+    </div>
+    <div id="location-info" class="hidden">
+      <i class="ri-map-pin-2-line"></i><span id="location-data">Alta St</span>
+    </div>
+  </div>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
