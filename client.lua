@@ -1,29 +1,3 @@
-local HUD_ELEMENTS = {
-  HUD = { id = 0, hidden = false },
-  HUD_WANTED_STARS = { id = 1, hidden = true },
-  HUD_WEAPON_ICON = { id = 2, hidden = false },
-  HUD_CASH = { id = 3, hidden = true },
-  HUD_MP_CASH = { id = 4, hidden = true },
-  HUD_MP_MESSAGE = { id = 5, hidden = true },
-  HUD_VEHICLE_NAME = { id = 6, hidden = true },
-  HUD_AREA_NAME = { id = 7, hidden = true },
-  HUD_VEHICLE_CLASS = { id = 8, hidden = true },
-  HUD_STREET_NAME = { id = 9, hidden = false },
-  HUD_HELP_TEXT = { id = 10, hidden = false },
-  HUD_FLOATING_HELP_TEXT_1 = { id = 11, hidden = false },
-  HUD_FLOATING_HELP_TEXT_2 = { id = 12, hidden = false },
-  HUD_CASH_CHANGE = { id = 13, hidden = true },
-  HUD_SUBTITLE_TEXT = { id = 15, hidden = false },
-  HUD_RADIO_STATIONS = { id = 16, hidden = false },
-  HUD_SAVING_GAME = { id = 17, hidden = false },
-  HUD_GAME_STREAM = { id = 18, hidden = false },
-  HUD_WEAPON_WHEEL = { id = 19, hidden = false },
-  HUD_WEAPON_WHEEL_STATS = { id = 20, hidden = true },
-  MAX_HUD_COMPONENTS = { id = 21, hidden = false },
-  MAX_HUD_WEAPONS = { id = 22, hidden = false },
-  MAX_SCRIPTED_HUD_COMPONENTS = { id = 141, hidden = false }
-}
-
 local ui_visibility = true
 local mph = 2.236936
 local kph = 3.6
@@ -108,6 +82,7 @@ local function UpdateVehicleHUD(pedId)
 
     SendNUIMessage({
       type = 'UPDATE_VEHICLE',
+      center = Config.SpeedometerInCenter,
       location = cur_location,
       speed = cur_speed,
       rpm = math.floor(cur_rpm),
@@ -126,6 +101,7 @@ local function UpdateHUD(pedId)
   local cur_health = (GetEntityHealth(pedId) - 100)
   local cur_armor = GetPedArmour(pedId)
   local cur_oxygen = GetPlayerUnderwaterTimeRemaining(playerId) * 10
+  local cur_stamina = GetPlayerStamina(playerId)
 
   if GetPlayerUnderwaterTimeRemaining(playerId) <= 0 then
     cur_oxygen = 0
@@ -133,11 +109,14 @@ local function UpdateHUD(pedId)
   if GetEntityHealth(pedId) < 100 then
     cur_health = 0
   end
+
   SendNUIMessage({
     type = 'UPDATE_HUD',
-    health = cur_health,
+    health = {cur_health, Config.HealthLimit},
     armor = cur_armor,
-    stamina = GetPlayerStamina(playerId),
+    --hungry = {GetPlayerHunger(playerId), Config.HungerLimit},
+    --thirst = {GetPlayerThirst(playerId), Config.ThirstLimit},
+    stamina = cur_stamina,
     oxygen = cur_oxygen,
   })
 end
@@ -171,7 +150,7 @@ CreateThread(function()
       isInVehicle = IsPedInAnyVehicle(pedId, false)
       DisplayRadar(isInVehicle)
     end
-    for _, val in pairs(HUD_ELEMENTS) do
+    for _, val in pairs(Config.HUD_ELEMENTS) do
       if val.hidden then
         HideHudComponentThisFrame(val.id)
       else
@@ -181,9 +160,9 @@ CreateThread(function()
   end
 end)
 
-
 -- This thread continuously updates the UI based on the state of the current vehicle.
 CreateThread(function()
+
   while true do
     if ui_visibility then
       if isInVehicle then
@@ -200,3 +179,14 @@ CreateThread(function()
   end
 end)
 
+CreateThread(function()
+  while true do
+    Wait(1000)
+    SendNUIMessage({
+      type = 'OPEN',
+      colorMode = Config.EnableColorMode,
+      position = Config.ShowOnLeftSide,
+    })
+    break
+  end
+end)
