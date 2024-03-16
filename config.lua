@@ -3,8 +3,8 @@ Config = {}
 ----------------------------------------------------------------------
 --#region PLAYER INFO
 
-Config.EnableColorMode = true -- Set to true if you want the color mode instead the black and white mode.
-Config.ShowOnLeftSide = true -- Set to true if you want the status bars to be on the left side or false to be on the bottom side.
+Config.EnableColorMode = false -- Set to true if you want the color mode instead the black and white mode.
+Config.ShowOnLeftSide = false -- Set to true if you want the status bars to be on the left side or false to be on the bottom side.
 
 -- Table of the status bars with the limit to be displayed.
 Config.HealthLimit = 95
