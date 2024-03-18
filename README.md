@@ -31,6 +31,7 @@ Minimalist and configurable UI with speedometer for QB framework, responsive wit
 2.  Place `llop-HUD` in your resources directory (you can change the name of the resouce).
 3.  Add `ensure llop-HUD` to your server.cfg
 
+##Configuration Variables
 
 `Config.EnableColorMode` Set to true if you want the color mode instead the black and white mode.
 
