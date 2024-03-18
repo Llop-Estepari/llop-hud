@@ -6,8 +6,8 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
   <a href="#features">Features</a> •
   <a href="#dependency">Dependency</a> •
   <a href="#installation">Installation</a> •
-  <a href="#configuration-variables">Configuration Variables</a> •
-  <a href="#Screenshots">Screenshots</a>
+  <a href="#configuration-variables">Configuration</a> •
+  <a href="#screenshots">Screenshots</a>
 </p>
 
 ## Features
