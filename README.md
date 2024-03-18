@@ -1,6 +1,6 @@
 # llop-hud
 
-Minimalist and configurable UI with speedometer for QB framework, responsive with every resolution and aspect ratio.
+Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE** with every resolution and aspect ratio.
 
 
 ## Features
@@ -31,7 +31,7 @@ Minimalist and configurable UI with speedometer for QB framework, responsive wit
 2.  Place `llop-HUD` in your resources directory (you can change the name of the resouce).
 3.  Add `ensure llop-HUD` to your server.cfg
 
-##Configuration Variables
+## Configuration Variables
 
 `Config.EnableColorMode` Set to true if you want the color mode instead the black and white mode.
 
@@ -64,3 +64,8 @@ Minimalist and configurable UI with speedometer for QB framework, responsive wit
 `Config.DisableHUDElements` Set to true if you want to disable the HUD elements.
 
 ## Screenshots
+
+
+<h1 align="center">
+  <a href="https://www.youtube.com/watch?v=eVrYbKBrI7o" target="_blank"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbloomerang.co%2Fwp-content%2Fuploads%2F2019%2F06%2FDonate.png&f=1&nofb=1&ipt=9710f382a05bc1aae123e287c309eb5236d4e5aca8608e7c10874324fd64a82c&ipo=images" alt="" width="200"></a>
+</h1>
