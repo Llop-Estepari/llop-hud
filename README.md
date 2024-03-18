@@ -9,7 +9,7 @@
   <a href="#dependency">Dependency</a> •
   <a href="#installation">Installation</a> •
   <a href="#configuration-variables">Configuration</a> •
-  <a href="#screenshots">Screenshots</a><br>
+  <a href="#screenshots">Screenshots</a> •
   <a href="#video">Video</a><br>
 </p>
 
