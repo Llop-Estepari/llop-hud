@@ -12,7 +12,7 @@ local cur_thirst = 100
 local lastFuelUpdate = 0
 local lastFuelCheck = {}
 
-
+local playerLoaded = false
 
 -- This function loads the settings.
 local function loadSettings()
@@ -53,10 +53,9 @@ local function getFuelLevel(vehicle)
       lastFuelCheck = math.max(0, math.min(lastFuelCheck, 99))
 
       return lastFuelCheck
-    elseif Config.FuelScript == 'ox-fuel' then
-      --TODO: Add compatibility with ox-fuel
-    elseif Config.FuelScript == 'ps-fuel' then
-      --TODO: Add compatibility with ps-fuel
+    elseif Config.FuelScript == 'ox-fuel' or Config.FuelScript == 'ps-fuel' then
+      local fuelLevel = math.floor(GetVehicleFuelLevel(vehicle))
+      return math.max(0, math.min(fuelLevel, 99))
     else
       return 99
     end
@@ -188,6 +187,13 @@ end)
 CreateThread(function()
   while true do
     Wait(0)
+    if playerLoaded then
+      if GetPauseMenuState() == 0 then
+        showHUD()
+      else
+        hideHUD()
+      end
+    end
     if Config.HideRadarOnFoot then
       local pedId = PlayerPedId()
       isInVehicle = IsPedInAnyVehicle(pedId, false)
@@ -226,12 +232,14 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
   --print("OnPlayerLoaded!")
   loadSettings()
   PlayerData = QBCore.Functions.GetPlayerData()
+  playerLoaded = true
   showHUD()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
   --print("OnPlayerUnload!")
   PlayerData = {}
+  playerLoaded = false
   hideHUD()
 end)
 
