@@ -3,6 +3,7 @@
 Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE** with every resolution and aspect ratio.
 
 <p align="center">
+  <img src="https://i.gyazo.com/d3027f05c1a4ad5e0dd092162d3e7d3c.jpg"/><br>
   <a href="#features">Features</a> •
   <a href="#dependency">Dependency</a> •
   <a href="#installation">Installation</a> •
@@ -73,3 +74,8 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 `Config.DisableHUDElements` Set to true if you want to disable the HUD elements.
 
 ## Screenshots
+
+<p align="center">
+  <img src="https://i.gyazo.com/c26c259cf7b145df6bb5f648e869bfaf.jpg"/><br>
+  <img src="https://i.gyazo.com/6f738eaf47bfc1c5bf86578b52bf3c40.png"/><br>
+</p>
