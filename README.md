@@ -13,10 +13,12 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 ## Features
 
  - Command for disable or enable the hud ("toggleui").
- - A color mode for the status progress bars. 
+ - A **color mode** for the status progress bars. 
  - Multiple config variables for a simple configuration.
- - Percentage limits for some progressbar (health, thirst and hungry) to be shown.
- - Speedometer inspired in the new NoPixel HUD with:
+ - Percentage limits for some progressbar (**health**, **thirst** and **hungry**) to be shown.
+ - **Armour** is only shown when you have more than 0% of armour.
+ - **Stamina** and **oxygen** are only shown when they are below 100%.
+ - **Speedometer** inspired in the new NoPixel HUD with:
      - MPH or KPH
      - RPM
      - Gear
@@ -24,8 +26,8 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
      - Lights
      - Engine health
      - Lock state.
- - Location and time displayed on gps.
- - Options to disable native hud components.
+ - **Location and time** displayed on gps.
+ - Options to **disable native hud** components.
  - Compatibility with Legacyfuel, ox-fuel and ps-fuel.
 
 ## Dependency
