@@ -16,6 +16,8 @@ Requirements for the software and other tools to build, test and push
 
 ### Installing
 
+Download the entire project or from the <a link="https://github.com/Llop-Estepari/llop-HUD/releases/tag/v1.0.0">release</a> 
+
 ## Running the tests
 
 
@@ -24,19 +26,3 @@ Requirements for the software and other tools to build, test and push
 Checks if the best practices and the right coding style has been used.
 
     Give an example
-
-## Deployment
-
-Add additional notes to deploy this on a live system
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
