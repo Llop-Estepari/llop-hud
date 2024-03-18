@@ -76,6 +76,14 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 ## Screenshots
 
 <p align="center">
-  <img src="https://i.gyazo.com/c26c259cf7b145df6bb5f648e869bfaf.jpg"/><br>
-  <img src="https://i.gyazo.com/6f738eaf47bfc1c5bf86578b52bf3c40.png"/><br>
+  <img src="https://i.gyazo.com/308e956b127163c37994a82b83c7e3cc.jpg"/><br>
+  <img src="https://i.gyazo.com/3eac5dfa2f2e7b3e0adf1f977fb54a16.jpg"/><br>
+</p>
+
+### Extras Configurations:
+<p align="center">
+  <img src="https://i.gyazo.com/89be149d5521bbd45d1d6bbf384684d3.png"/><br>
+  <span>Color mode enabled</span><br>
+  <img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
+  <span>Left side enabled</span><br>
 </p>
