@@ -6,9 +6,9 @@ Config = {}
 Config.EnableColorMode = false -- Set to true if you want the color mode instead the black and white mode.
 Config.ShowOnLeftSide = false -- Set to true if you want the status bars to be on the left side or false to be on the bottom side.
 
-Config.HealthLimit = 95 -- The health minimum (in percentage) to be shown.
-Config.HungerLimit = 80  -- The hunger minimum (in percentage) to be shown.
-Config.ThirstLimit = 80 -- The thirst minimum (in percentage) to be shown.
+Config.HealthLimit = 95 -- The health limit in percentage to be shown.
+Config.HungerLimit = 90  -- The hunger limit in percentage to be shown.
+Config.ThirstLimit = 90 -- The thirst limit in percentage to be shown.
 
 --#endregion
 ----------------------------------------------------------------------
@@ -18,43 +18,22 @@ Config.SpeedometerUpdateRate = 100 -- The update rate of the speedometer in mill
 Config.SpeedometerInCenter = false -- Set to true if you want the speedometer to be in the center of the screen.
 
 Config.UseMPH = false -- Enbale or disable the use of MPH
-Config.FuelScript = 'ox-fuel' -- The script name of the your fuel script.
+Config.FuelScript = 'legacyfuel' -- The script name of the your fuel script.
 --List of compatible scripts: 'legacyfuel', 'ox-fuel', 'ps-fuel'.
 
 Config.ShowTime = true -- Show the current time.
 Config.ShowLocation = true -- Show the current street name.
 Config.ShowZone = true -- If true it will show the current zone instead of the street name.
-Config.ShowFuel = true -- Show the current fuel level.
+Config.ShowFuel = true -- Show the current fuel level in percentage.
 
 Config.HideRadarOnFoot = true -- Hide the radar when not in a vehicle
 --#endregion
 ----------------------------------------------------------------------
 
+Config.DisableHUDElements = true -- Set to true if you want to disable the HUD elements.
 
-Config.DisableHUDElements = false -- Set to true if you want to disable the HUD elements.
-
-Config.HUD_ELEMENTS = { --Define the HUD elements you want to show.
-  HUD = { id = 0, hidden = true },
-  WANTED_STARS = { id = 1, hidden = true },
-  WEAPON_ICON = { id = 2, hidden = false },
-  CASH = { id = 3, hidden = true },
-  MP_CASH = { id = 4, hidden = true },
-  MP_MESSAGE = { id = 5, hidden = true },
-  VEHICLE_NAME = { id = 6, hidden = true },
-  VEHICLE_CLASS = { id = 8, hidden = true },
-  AREA_NAME = { id = 7, hidden = true },
-  STREET_NAME = { id = 9, hidden = true },
-  HELP_TEXT = { id = 10, hidden = false },
-  FLOATING_HELP_TEXT_1 = { id = 11, hidden = false },
-  FLOATING_HELP_TEXT_2 = { id = 12, hidden = false },
-  CASH_CHANGE = { id = 13, hidden = true },
-  SUBTITLE_TEXT = { id = 15, hidden = false },
-  RADIO_STATIONS = { id = 16, hidden = false },
-  SAVING_GAME = { id = 17, hidden = false },
-  GAME_STREAM = { id = 18, hidden = false },
-  WEAPON_WHEEL = { id = 19, hidden = true },
-  WEAPON_WHEEL_STATS = { id = 20, hidden = true },
-  MAX_HUD_COMPONENTS = { id = 21, hidden = true },
-  MAX_HUD_WEAPONS = { id = 22, hidden = true },
-  MAX_SCRIPTED_HUD_COMPONENTS = { id = 141, hidden = true }
+Config.Disable = {
+  hudComponents = { 1, 2, 3, 4, 5, 6, 8, 7, 9, 13, 14, 19, 20, 21, 22 }, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
+  controls = { 37 },                                            -- Controls: https://docs.fivem.net/docs/game-references/controls/
+  displayAmmo = true,                                           -- false disables ammo display
 }

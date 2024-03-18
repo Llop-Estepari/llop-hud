@@ -196,11 +196,17 @@ body {
   font-size: 20px;
   color: var(--gps-text-color);
   text-shadow: -1px -1px 3px #16161644, 1px -1px 3px #16161644, -1px 1px 3px #16161644, 1px 1px 3px #16161644;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  font-weight: 600;
+  line-height: 100px;
+}
+
+#location-data {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: 600;
-  line-height: 100px;
 }
 
 #time-info {

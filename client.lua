@@ -1,7 +1,11 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 PlayerData = QBCore.Functions.GetPlayerData()
 
-local ui_visibility = true
+local disableHudComponents = Config.Disable.hudComponents
+local disableControls = Config.Disable.controls
+local displayAmmo = Config.Disable.displayAmmo
+
+local ui_visibility = false
 local mph = 2.236936
 local kph = 3.6
 local isInVehicle
@@ -24,17 +28,21 @@ local function loadSettings()
 end
 
 local function showHUD()
+  if ui_visibility then return end
   SendNUIMessage({
     type = 'VISIBILITY',
-    visible = true,
+    visibility = true,
   })
+  ui_visibility = true
 end
 
 local function hideHUD()
+  if not ui_visibility then  return end
   SendNUIMessage({
     type = 'VISIBILITY',
-    visible = false,
+    visibility = false,
   })
+  ui_visibility = false
 end
 
 -- This function calculates return fuel level of a vehicle.
@@ -165,10 +173,11 @@ end
 -- This command toggles the UI.
 RegisterCommand("toggleUI", function(_, args)
   ui_visibility = not ui_visibility
-  SendNUIMessage({
-    type = 'TOGGLE_HUD',
-    visible = ui_visibility,
-  })
+  if ui_visibility then
+    hideHUD()
+  else
+    showHUD()
+  end
 end, false)
 
 
@@ -183,10 +192,9 @@ CreateThread(function()
   end
 end)
 
---This thread constantly hide default GTA HUD elements.
-CreateThread(function()
+-- This thread constantly updates the vehicle UI based on the state of the player and the pause menu.
+CreateThread(function ()
   while true do
-    Wait(0)
     if playerLoaded then
       if GetPauseMenuState() == 0 then
         showHUD()
@@ -199,15 +207,27 @@ CreateThread(function()
       isInVehicle = IsPedInAnyVehicle(pedId, false)
       DisplayRadar(isInVehicle)
     end
-    if Config.DisableHUDElements then
-      for _, val in pairs(Config.HUD_ELEMENTS) do
-        if val.hidden then
-          HideHudComponentThisFrame(val.id)
-        end
-      end
-    end
+    Wait(0)
   end
 end)
+
+-- This thread constantly hide default GTA HUD elements.
+CreateThread(function()
+  if not Config.DisableHUDElements then return end
+  while true do
+    for i = 1, #disableHudComponents do
+        HideHudComponentThisFrame(disableHudComponents[i])
+    end
+
+    for i = 1, #disableControls do
+        DisableControlAction(2, disableControls[i], true)
+    end
+
+    DisplayAmmoThisFrame(displayAmmo)
+    Wait(0)
+  end
+end)
+
 
 -- This thread continuously updates the UI based on the state of the current vehicle.
 CreateThread(function()
@@ -229,7 +249,6 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
   Wait(2000)
-  --print("OnPlayerLoaded!")
   loadSettings()
   PlayerData = QBCore.Functions.GetPlayerData()
   playerLoaded = true
@@ -237,7 +256,6 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-  --print("OnPlayerUnload!")
   PlayerData = {}
   playerLoaded = false
   hideHUD()

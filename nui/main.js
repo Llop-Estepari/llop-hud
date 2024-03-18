@@ -24,7 +24,7 @@ window.addEventListener('message', (event) => {
     updateSide(event.data.position);
   }
   if (event.data.type === 'VISIBILITY') {
-    document.body.className = event.data.visible ? '' : 'hidden';
+    document.body.classList.toggle('hidden');
   }
   if (event.data.type === 'UPDATE_HUD') {
     updateBarIfLowerThanCustom(healthContainer, healthBar, event.data.health);
@@ -33,7 +33,6 @@ window.addEventListener('message', (event) => {
     updateBarIfLowerThanCustom(oxygenConatiner, oxygenBar, [event.data.oxygen, 100]);
     updateBarIfLowerThanCustom(hungerContainer, hungerBar, event.data.hunger);
     updateBarIfLowerThanCustom(thirstContainer, thirstBar, event.data.thirst);
-
   }
   if (event.data.type === 'UPDATE_VEHICLE') {
     updateInfo(document.getElementById('speed'), ('000' + event.data.speed).slice(-3));
@@ -51,9 +50,6 @@ window.addEventListener('message', (event) => {
       vehicleInfo.classList.remove('in-center');
 
     }
-  }
-  if (event.data.type === 'TOGGLE_HUD') {
-    document.body.className = event.data.visible ? '' : 'hidden';
   }
   if (event.data.type === 'TOGGLE_VEHICLE') {
     toggleVehicle(event.data.visible)
