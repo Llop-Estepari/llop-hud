@@ -3,7 +3,7 @@
 Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE** with every resolution and aspect ratio.
 
 <p align="center">
-  <img src="https://i.gyazo.com/d3027f05c1a4ad5e0dd092162d3e7d3c.jpg"/><br>
+  <img src="https://i.gyazo.com/f287e28d5049047a77ed7341e07c2105.jpg"/><br>
   <a href="#features">Features</a> •
   <a href="#dependency">Dependency</a> •
   <a href="#installation">Installation</a> •
