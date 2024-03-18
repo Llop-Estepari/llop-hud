@@ -19,7 +19,7 @@ let thirstBar = document.getElementById('thirst-bar');
 let thirstContainer = document.getElementById('thirst');
 
 window.addEventListener('message', (event) => {
-  if (event.data.type === 'OPEN') {
+  if (event.data.type === 'SETTINGS') {
     setColorMode(event.data.colorMode);
     updateSide(event.data.position);
 
@@ -29,7 +29,9 @@ window.addEventListener('message', (event) => {
     updateBarIfMoreThanZero(armorContainer, armorBar, event.data.armor);
     updateBarIfLowerThanCustom(staminaContainer, staminaBar, [event.data.stamina, 100]);
     updateBarIfLowerThanCustom(oxygenConatiner, oxygenBar, [event.data.oxygen, 100]);
-    // Add hunger, and thirst here
+    updateBarIfLowerThanCustom(hungerContainer, hungerBar, event.data.hunger);
+    updateBarIfLowerThanCustom(thirstContainer, thirstBar, event.data.thirst);
+
   }
   if (event.data.type === 'UPDATE_VEHICLE') {
     updateInfo(document.getElementById('speed'), ('000' + event.data.speed).slice(-3));
@@ -56,24 +58,6 @@ window.addEventListener('message', (event) => {
   }
 })
 
-function setColorMode(color) {
-  if (color){
-    r.style.setProperty('--normal-shadow', '-1px -1px 2px #16161644, 1px -1px 2px #16161644, -1px 1px 2px #16161644, 1px 1px 2px #16161644');
-  } else {
-    r.style.setProperty('--health-color', '#ececec');
-    r.style.setProperty('--armor-color', '#ececec');
-    r.style.setProperty('--hunger-color', '#ececec');
-    r.style.setProperty('--thirst-color', '#ececec');
-    r.style.setProperty('--stamina-color', '#ececec');
-    r.style.setProperty('--oxygen-color', '#ececec');
-    r.style.setProperty('--text-health-color', '#0f0f0f');
-    r.style.setProperty('--text-armor-color', '#0f0f0f');
-    r.style.setProperty('--text-hunger-color', '#0f0f0f');
-    r.style.setProperty('--text-thirst-color', '#0f0f0f');
-    r.style.setProperty('--text-stamina-color', '#0f0f0f');
-    r.style.setProperty('--text-oxygen-color', '#0f0f0f');
-  }
-}
 
 function updateSide(value) {
   if (value === true) {
@@ -170,4 +154,23 @@ function toggleVehicle(visibility){
 
 function updateInfo(element, value) {
   element.innerHTML = value;
+}
+
+function setColorMode(color) {
+  if (color){
+    r.style.setProperty('--normal-shadow', '-1px -1px 2px #16161644, 1px -1px 2px #16161644, -1px 1px 2px #16161644, 1px 1px 2px #16161644');
+  } else {
+    r.style.setProperty('--health-color', '#ececec');
+    r.style.setProperty('--armor-color', '#ececec');
+    r.style.setProperty('--hunger-color', '#ececec');
+    r.style.setProperty('--thirst-color', '#ececec');
+    r.style.setProperty('--stamina-color', '#ececec');
+    r.style.setProperty('--oxygen-color', '#ececec');
+    r.style.setProperty('--text-health-color', '#0f0f0f');
+    r.style.setProperty('--text-armor-color', '#0f0f0f');
+    r.style.setProperty('--text-hunger-color', '#0f0f0f');
+    r.style.setProperty('--text-thirst-color', '#0f0f0f');
+    r.style.setProperty('--text-stamina-color', '#0f0f0f');
+    r.style.setProperty('--text-oxygen-color', '#0f0f0f');
+  }
 }

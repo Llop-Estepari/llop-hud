@@ -6,10 +6,9 @@ Config = {}
 Config.EnableColorMode = false -- Set to true if you want the color mode instead the black and white mode.
 Config.ShowOnLeftSide = false -- Set to true if you want the status bars to be on the left side or false to be on the bottom side.
 
--- Table of the status bars with the limit to be displayed.
-Config.HealthLimit = 95
-Config.HungryLimit = 70
-Config.ThirstLimit = 70
+Config.HealthLimit = 95 -- The health limit in percentage to be shown.
+Config.HungerLimit = 95  -- The hunger limit in percentage to be shown.
+Config.ThirstLimit = 95 -- The thirst limit in percentage to be shown.
 
 --#endregion
 ----------------------------------------------------------------------
@@ -19,7 +18,7 @@ Config.SpeedometerUpdateRate = 100 -- The update rate of the speedometer in mill
 Config.SpeedometerInCenter = false -- Set to true if you want the speedometer to be in the center of the screen.
 
 Config.UseMPH = false -- Enbale or disable the use of MPH
-Config.FuelScript = '' -- The script name of the your fuel script.
+Config.FuelScript = 'legacyfuel' -- The script name of the your fuel script.
 --List of compatible scripts: 'legacyfuel', 'ox-fuel', 'ps-fuel'.
 Config.ShowTime = true -- Show the current time.
 Config.ShowLocation = true -- Show the current street name.

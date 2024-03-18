@@ -1,11 +1,33 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+PlayerData = QBCore.Functions.GetPlayerData()
+
 local ui_visibility = true
 local mph = 2.236936
 local kph = 3.6
 local isInVehicle
 
+local cur_hunger = 100
+local cur_thirst = 100
+
 local lastFuelUpdate = 0
 local lastFuelCheck = {}
 
+
+
+-- This function loads the settings.
+local function loadSettings()
+  SendNUIMessage({
+    type = 'SETTINGS',
+    colorMode = Config.EnableColorMode,
+    position = Config.ShowOnLeftSide,
+  })
+end
+
+-- This function calculates return fuel level of a vehicle.
+--
+-- @param vehicle The vehicle to check the fuel level of.
+--
+-- @return The fuel level of the vehicle. A number between 0 and 99.
 local function getFuelLevel(vehicle)
   if Config.ShowFuel then
     if Config.FuelScript == 'legacyfuel' then
@@ -29,6 +51,7 @@ local function getFuelLevel(vehicle)
   end
 end
 
+-- This function toggles the visibility of the vehicle HUD.
 local function toggleVehicleHUD()
   SendNUIMessage({
     type = 'TOGGLE_VEHICLE',
@@ -36,6 +59,7 @@ local function toggleVehicleHUD()
   })
 end
 
+-- This function updates the vehicle HUD with the current state and show the time and location if enabled.
 local function UpdateVehicleHUD(pedId)
   if IsPedInAnyVehicle(pedId, true) then
     local vehicle = GetVehiclePedIsIn(pedId, false)
@@ -46,6 +70,12 @@ local function UpdateVehicleHUD(pedId)
     toggleVehicleHUD()
     local coords = GetEntityCoords(pedId)
 
+
+    local r, light, cur_highbeams = GetVehicleLightsState(vehicle)
+    local cur_light = light + cur_highbeams
+    local cur_lock = GetVehicleDoorLockStatus(vehicle)
+    local cur_engine = GetVehicleEngineHealth(vehicle)
+
     local cur_location = ''
     if Config.ShowLocation then
       if Config.ShowZone then
@@ -55,13 +85,8 @@ local function UpdateVehicleHUD(pedId)
         cur_location = GetStreetNameFromHashKey(GetStreetNameAtCoord(coords.x, coords.y, coords.z))
       end
     end
-    local r, light, cur_highbeams = GetVehicleLightsState(vehicle)
-    local cur_light = light + cur_highbeams
-    local cur_lock = GetVehicleDoorLockStatus(vehicle)
-    local cur_engine = GetVehicleEngineHealth(vehicle)
 
     local cur_time = ''
-
     if Config.ShowTime then
       local cur_hour = string.format("%02d", GetClockHours())
       local cur_min = string.format("%02d", GetClockMinutes())
@@ -96,6 +121,7 @@ local function UpdateVehicleHUD(pedId)
   end
 end
 
+-- This function updates the player HUD.
 local function UpdateHUD(pedId)
   local playerId = PlayerId()
   local cur_health = (GetEntityHealth(pedId) - 100)
@@ -114,12 +140,14 @@ local function UpdateHUD(pedId)
     type = 'UPDATE_HUD',
     health = {cur_health, Config.HealthLimit},
     armor = cur_armor,
-    --hungry = {GetPlayerHunger(playerId), Config.HungerLimit},
-    --thirst = {GetPlayerThirst(playerId), Config.ThirstLimit},
+    hunger = {cur_hunger, Config.HungerLimit},
+    thirst = {cur_thirst, Config.ThirstLimit},
     stamina = cur_stamina,
     oxygen = cur_oxygen,
   })
 end
+
+
 
 -- This command toggles the UI.
 RegisterCommand("toggleUI", function(_, args)
@@ -129,6 +157,7 @@ RegisterCommand("toggleUI", function(_, args)
     visible = ui_visibility,
   })
 end, false)
+
 
 -- This thread constantly updates the UI based on the state of the player.
 CreateThread(function()
@@ -179,14 +208,28 @@ CreateThread(function()
   end
 end)
 
-CreateThread(function()
-  while true do
-    Wait(1000)
-    SendNUIMessage({
-      type = 'OPEN',
-      colorMode = Config.EnableColorMode,
-      position = Config.ShowOnLeftSide,
-    })
-    break
-  end
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+  Wait(2000)
+  print("OnPlayerLoaded!")
+  loadSettings()
+  PlayerData = QBCore.Functions.GetPlayerData()
+end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+  print("OnPlayerUnload!")
+  PlayerData = {}
+end)
+
+RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
+  PlayerData = val
+end)
+
+RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
+  cur_hunger = newHunger
+  cur_thirst = newThirst
+end)
+
+RegisterNetEvent('hud:client:LoadMap', function()
+  print("LoadMap!")
+  Wait(50)
 end)
