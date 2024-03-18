@@ -1,6 +1,6 @@
 # llop-hud
 
-Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE** with every resolution and aspect ratio.
+**Minimalist** and configurable **UI** with **speedometer** for **QB framework**, **_RESPONSIVE_** with every resolution and aspect ratio.
 
 <p align="center">
   <img src="https://i.gyazo.com/f287e28d5049047a77ed7341e07c2105.jpg"/><br>
@@ -74,16 +74,12 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 `Config.DisableHUDElements` Set to true if you want to disable the HUD elements.
 
 ## Screenshots
+### Default
+<img src="https://i.gyazo.com/308e956b127163c37994a82b83c7e3cc.jpg"/><br>
+### Speedometer
+<img src="https://i.gyazo.com/3eac5dfa2f2e7b3e0adf1f977fb54a16.jpg"/><br>
 
-<p align="center">
-  <img src="https://i.gyazo.com/308e956b127163c37994a82b83c7e3cc.jpg"/><br>
-  <img src="https://i.gyazo.com/3eac5dfa2f2e7b3e0adf1f977fb54a16.jpg"/><br>
-</p>
-
-### Extras Configurations:
-<p align="center">
-  <img src="https://i.gyazo.com/89be149d5521bbd45d1d6bbf384684d3.png"/><br>
-  <span>Color mode enabled</span><br>
-  <img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
-  <span>Left side enabled</span><br>
-</p>
+### Color mode
+<img align="center" src="https://i.gyazo.com/89be149d5521bbd45d1d6bbf384684d3.png"/><br>
+### Left side
+<img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
