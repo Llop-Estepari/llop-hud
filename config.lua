@@ -6,9 +6,9 @@ Config = {}
 Config.EnableColorMode = false -- Set to true if you want the color mode instead the black and white mode.
 Config.ShowOnLeftSide = false -- Set to true if you want the status bars to be on the left side or false to be on the bottom side.
 
-Config.HealthLimit = 95 -- The health limit in percentage to be shown.
-Config.HungerLimit = 80  -- The hunger limit in percentage to be shown.
-Config.ThirstLimit = 80 -- The thirst limit in percentage to be shown.
+Config.HealthLimit = 95 -- The health minimum (in percentage) to be shown.
+Config.HungerLimit = 80  -- The hunger minimum (in percentage) to be shown.
+Config.ThirstLimit = 80 -- The thirst minimum (in percentage) to be shown.
 
 --#endregion
 ----------------------------------------------------------------------
@@ -24,7 +24,7 @@ Config.FuelScript = 'ox-fuel' -- The script name of the your fuel script.
 Config.ShowTime = true -- Show the current time.
 Config.ShowLocation = true -- Show the current street name.
 Config.ShowZone = true -- If true it will show the current zone instead of the street name.
-Config.ShowFuel = true -- Show the current fuel level in percentage.
+Config.ShowFuel = true -- Show the current fuel level.
 
 Config.HideRadarOnFoot = true -- Hide the radar when not in a vehicle
 --#endregion
