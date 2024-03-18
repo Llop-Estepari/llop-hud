@@ -1,5 +1,6 @@
-# Project Title
+# llop-hud
 
+Minimalist UI with speedometer for QB framework (can be used for standalone with some adjustments).
 
 ## Getting Started
 
