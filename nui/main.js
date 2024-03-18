@@ -7,8 +7,8 @@ let statusConatiner = document.getElementById('status');
 
 let healthBar = document.getElementById('health-bar');
 let healthContainer = document.getElementById('health');
-let armorBar = document.getElementById('armor-bar');
-let armorContainer = document.getElementById('armor');
+let armourBar = document.getElementById('armour-bar');
+let armourContainer = document.getElementById('armour');
 let oxygenBar = document.getElementById('oxygen-bar');
 let oxygenConatiner = document.getElementById('oxygen');
 let staminaBar = document.getElementById('stamina-bar');
@@ -28,7 +28,7 @@ window.addEventListener('message', (event) => {
   }
   if (event.data.type === 'UPDATE_HUD') {
     updateBarIfLowerThanCustom(healthContainer, healthBar, event.data.health);
-    updateBarIfMoreThanZero(armorContainer, armorBar, event.data.armor);
+    updateBarIfMoreThanZero(armourContainer, armourBar, event.data.armour);
     updateBarIfLowerThanCustom(staminaContainer, staminaBar, [event.data.stamina, 100]);
     updateBarIfLowerThanCustom(oxygenConatiner, oxygenBar, [event.data.oxygen, 100]);
     updateBarIfLowerThanCustom(hungerContainer, hungerBar, event.data.hunger);
@@ -163,13 +163,13 @@ function setColorMode(color) {
     r.style.setProperty('--normal-shadow', '-1px -1px 2px #16161644, 1px -1px 2px #16161644, -1px 1px 2px #16161644, 1px 1px 2px #16161644');
   } else {
     r.style.setProperty('--health-color', '#ececec');
-    r.style.setProperty('--armor-color', '#ececec');
+    r.style.setProperty('--armour-color', '#ececec');
     r.style.setProperty('--hunger-color', '#ececec');
     r.style.setProperty('--thirst-color', '#ececec');
     r.style.setProperty('--stamina-color', '#ececec');
     r.style.setProperty('--oxygen-color', '#ececec');
     r.style.setProperty('--text-health-color', '#0f0f0f');
-    r.style.setProperty('--text-armor-color', '#0f0f0f');
+    r.style.setProperty('--text-armour-color', '#0f0f0f');
     r.style.setProperty('--text-hunger-color', '#0f0f0f');
     r.style.setProperty('--text-thirst-color', '#0f0f0f');
     r.style.setProperty('--text-stamina-color', '#0f0f0f');

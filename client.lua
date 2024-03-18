@@ -138,7 +138,7 @@ end
 local function UpdateHUD(pedId)
   local playerId = PlayerId()
   local cur_health = (GetEntityHealth(pedId) - 100)
-  local cur_armor = GetPedArmour(pedId)
+  local cur_armour = GetPedArmour(pedId)
   local cur_oxygen = GetPlayerUnderwaterTimeRemaining(playerId) * 10
   local cur_stamina = GetPlayerStamina(playerId)
 
@@ -152,7 +152,7 @@ local function UpdateHUD(pedId)
   SendNUIMessage({
     type = 'UPDATE_HUD',
     health = {cur_health, Config.HealthLimit},
-    armor = cur_armor,
+    armour = cur_armour,
     hunger = {cur_hunger, Config.HungerLimit},
     thirst = {cur_thirst, Config.ThirstLimit},
     stamina = cur_stamina,

@@ -9,13 +9,13 @@
   --text-color: #ececec;
   --gps-text-color: #c7c7c7;
   --health-color: #ff4b4b;
-  --armor-color: #6363f8;
+  --armour-color: #6363f8;
   --hunger-color: #ffd256;
   --thirst-color: #63eef8;
   --stamina-color: #88ff78;
   --oxygen-color: #bb87ff;
   --text-health-color: #ff4b4b;
-  --text-armor-color: #6363f8;
+  --text-armour-color: #6363f8;
   --text-hunger-color: #ffd256;
   --text-thirst-color: #63eef8;
   --text-stamina-color: #88ff78;
@@ -112,12 +112,12 @@ body {
   background-color: var(--health-color);
 }
 
-#armor .bar-icon {
-  color: var(--text-armor-color);
+#armour .bar-icon {
+  color: var(--text-armour-color);
 }
 
-#armor-bar {
-  background-color: var(--armor-color);
+#armour-bar {
+  background-color: var(--armour-color);
 }
 
 #hunger .bar-icon {
