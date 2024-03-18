@@ -71,9 +71,3 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 `Config.DisableHUDElements` Set to true if you want to disable the HUD elements.
 
 ## Screenshots
-
-## Support
-
-<h1 align="center">
-  <a href="https://www.youtube.com/watch?v=eVrYbKBrI7o" target="_blank"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbloomerang.co%2Fwp-content%2Fuploads%2F2019%2F06%2FDonate.png&f=1&nofb=1&ipt=9710f382a05bc1aae123e287c309eb5236d4e5aca8608e7c10874324fd64a82c&ipo=images" alt="" width="200"></a>
-</h1>
