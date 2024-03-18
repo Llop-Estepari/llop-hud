@@ -29,8 +29,10 @@ Config.HideRadarOnFoot = true -- Hide the radar when not in a vehicle
 --#endregion
 ----------------------------------------------------------------------
 
---Define the HUD elements you want to show.
-Config.HUD_ELEMENTS = {
+
+Config.DisableHUDElements = false -- Set to true if you want to disable the HUD elements.
+
+Config.HUD_ELEMENTS = { --Define the HUD elements you want to show.
   HUD = { id = 0, hidden = true },
   WANTED_STARS = { id = 1, hidden = true },
   WEAPON_ICON = { id = 2, hidden = false },
@@ -49,9 +51,9 @@ Config.HUD_ELEMENTS = {
   RADIO_STATIONS = { id = 16, hidden = false },
   SAVING_GAME = { id = 17, hidden = false },
   GAME_STREAM = { id = 18, hidden = false },
-  WEAPON_WHEEL = { id = 19, hidden = false },
+  WEAPON_WHEEL = { id = 19, hidden = true },
   WEAPON_WHEEL_STATS = { id = 20, hidden = true },
-  MAX_HUD_COMPONENTS = { id = 21, hidden = false },
+  MAX_HUD_COMPONENTS = { id = 21, hidden = true },
   MAX_HUD_WEAPONS = { id = 22, hidden = true },
   MAX_SCRIPTED_HUD_COMPONENTS = { id = 141, hidden = true }
 }

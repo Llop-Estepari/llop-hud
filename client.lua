@@ -23,6 +23,20 @@ local function loadSettings()
   })
 end
 
+local function showHUD()
+  SendNUIMessage({
+    type = 'VISIBILITY',
+    visible = true,
+  })
+end
+
+local function hideHUD()
+  SendNUIMessage({
+    type = 'VISIBILITY',
+    visible = false,
+  })
+end
+
 -- This function calculates return fuel level of a vehicle.
 --
 -- @param vehicle The vehicle to check the fuel level of.
@@ -170,7 +184,7 @@ CreateThread(function()
   end
 end)
 
--- This thread constantly hide default GTA HUD elements.
+--This thread constantly hide default GTA HUD elements.
 CreateThread(function()
   while true do
     Wait(0)
@@ -179,11 +193,11 @@ CreateThread(function()
       isInVehicle = IsPedInAnyVehicle(pedId, false)
       DisplayRadar(isInVehicle)
     end
-    for _, val in pairs(Config.HUD_ELEMENTS) do
-      if val.hidden then
-        HideHudComponentThisFrame(val.id)
-      else
-        ShowHudComponentThisFrame(val.id)
+    if Config.DisableHUDElements then
+      for _, val in pairs(Config.HUD_ELEMENTS) do
+        if val.hidden then
+          HideHudComponentThisFrame(val.id)
+        end
       end
     end
   end
@@ -191,7 +205,6 @@ end)
 
 -- This thread continuously updates the UI based on the state of the current vehicle.
 CreateThread(function()
-
   while true do
     if ui_visibility then
       if isInVehicle then
@@ -210,14 +223,16 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
   Wait(2000)
-  print("OnPlayerLoaded!")
+  --print("OnPlayerLoaded!")
   loadSettings()
   PlayerData = QBCore.Functions.GetPlayerData()
+  showHUD()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-  print("OnPlayerUnload!")
+  --print("OnPlayerUnload!")
   PlayerData = {}
+  hideHUD()
 end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
@@ -227,9 +242,4 @@ end)
 RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
   cur_hunger = newHunger
   cur_thirst = newThirst
-end)
-
-RegisterNetEvent('hud:client:LoadMap', function()
-  print("LoadMap!")
-  Wait(50)
 end)

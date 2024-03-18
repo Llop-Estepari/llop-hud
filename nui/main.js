@@ -22,7 +22,9 @@ window.addEventListener('message', (event) => {
   if (event.data.type === 'SETTINGS') {
     setColorMode(event.data.colorMode);
     updateSide(event.data.position);
-
+  }
+  if (event.data.type === 'VISIBILITY') {
+    document.body.className = event.data.visible ? '' : 'hidden';
   }
   if (event.data.type === 'UPDATE_HUD') {
     updateBarIfLowerThanCustom(healthContainer, healthBar, event.data.health);
