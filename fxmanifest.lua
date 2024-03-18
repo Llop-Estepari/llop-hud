@@ -4,7 +4,7 @@ lua54 'true'
 
 author 'Llop Estepari'
 description 'Minimalist HUD'
-version '1.1'
+version '1.0.1'
 
 client_scripts {
   'client.lua',
