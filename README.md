@@ -15,13 +15,13 @@
 
 ## Features
 
- - Command for disable or enable the hud ("toggleui").
+ - Command for toggle the hud visibility ("toggleui").
  - A **color mode** for the status progress bars. 
- - Multiple config variables for a simple configuration.
+ - Multiple configuration variables.
  - Percentage limits for some progressbar (**health**, **thirst** and **hungry**) to be shown.
  - **Armour** is only shown when you have more than 0% of armour.
  - **Stamina** and **oxygen** are only shown when they are below 100%.
- - **Speedometer** inspired in the new NoPixel HUD with:
+ - **Speedometer** features: _(inspired in the new NoPixel HUD)_
      - MPH or KPH
      - RPM
      - Gear
@@ -35,7 +35,7 @@
 
 ## Dependency
 
- - QBCore (can be used for standalone with some adjustments)
+ - [QBCore](https://github.com/qbcore-framework/) _(can be used for standalone with some adjustments)_
 
 ## Installation
 
@@ -49,11 +49,11 @@
 
 `Config.ShowOnLeftSide`  Set to true if you want the status bars to be on the left side or false to be on the bottom side.
 
-`Config.HealthLimit` The health limit in percentage to be shown.
+`Config.HealthLimit` The health minimum (in percentage) to be shown.
 
-`Config.HungerLimit` The hunger limit in percentage to be shown.
+`Config.HungerLimit` The hunger minimum (in percentage) to be shown.
 
-`Config.ThirstLimit` The thirst limit in percentage to be shown.
+`Config.ThirstLimit` The thirst minimum (in percentage) to be shown.
 
 `Config.SpeedometerUpdateRate` The update rate of the speedometer in milliseconds, lower values = faster updates. (Recommended: min 100, max 300)
 
@@ -69,7 +69,7 @@
 
 `Config.ShowZone` If true it will show the current zone instead of the street name.
 
-`Config.ShowFuel` Show the current fuel level in percentage.
+`Config.ShowFuel` Show the current fuel level.
 
 `Config.HideRadarOnFoot` Hide the radar when not in a vehicle
 
