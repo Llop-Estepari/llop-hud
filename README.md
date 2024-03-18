@@ -2,6 +2,13 @@
 
 Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE** with every resolution and aspect ratio.
 
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#dependency">Dependency</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration-variables">Configuration Variables</a> •
+  <a href="#Screenshots">Screenshots</a>
+</p>
 
 ## Features
 
@@ -25,7 +32,7 @@ Minimalist and configurable UI with speedometer for QB framework, **RESPONSIVE**
 
  - QBCore (can be used for standalone with some adjustments)
 
-## Installing
+## Installation
 
 1.  Download the entire project or [from the release](https://github.com/Llop-Estepari/llop-HUD/releases/tag/v1.0.0).
 2.  Place `llop-HUD` in your resources directory (you can change the name of the resouce).
