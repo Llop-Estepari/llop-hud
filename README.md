@@ -1,4 +1,4 @@
-# llop-hud 
+<h1 align="center">llop-hud </h1>
 
 
 **Minimalist** and configurable **UI** with **speedometer** for **QB framework**, **_RESPONSIVE_** with every resolution and aspect ratio.
@@ -76,17 +76,32 @@
 `Config.DisableHUDElements` Set to true if you want to disable the HUD elements.
 
 ## Screenshots
-### Default
-<img src="https://i.gyazo.com/308e956b127163c37994a82b83c7e3cc.jpg"/><br>
-### Speedometer
-<img src="https://i.gyazo.com/3eac5dfa2f2e7b3e0adf1f977fb54a16.jpg"/><br>
 
-### Color mode
-<img align="center" src="https://i.gyazo.com/89be149d5521bbd45d1d6bbf384684d3.png"/><br>
-### Left side
-<img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
+<h3 align="center">Default</h3>
+<p align="center">
+  <img src="https://i.gyazo.com/308e956b127163c37994a82b83c7e3cc.jpg"/><br>
+</p>
+
+<h3 align="center">Speedometer</h3>
+<p align="center">
+  <img src="https://i.gyazo.com/3eac5dfa2f2e7b3e0adf1f977fb54a16.jpg"/><br>
+</p>
+
+
+<h3 align="center">Color mode</h3>
+<p align="center">
+  <img src="https://i.gyazo.com/89be149d5521bbd45d1d6bbf384684d3.png"/><br>
+</p>
+
+
+<h3 align="center">Left side</h3>
+<p align="center">
+  <img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
+</p>
+
 
 ## Video
-
-<a href="https://www.youtube.com/watch?v=ZC_f-Kv7Ut0"><img width=248 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnghq.com%2Fwp-content%2Fuploads%2Fpnghq.com-youtube-tv-logo-youtubetv-5-350x350.png&f=1&nofb=1&ipt=3ce64901b170d36a8f631341562559c8031fded0a88b4538ae9d0c0b6bf1ac47&ipo=images"></a>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ZC_f-Kv7Ut0"><img width=248 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnghq.com%2Fwp-content%2Fuploads%2Fpnghq.com-youtube-tv-logo-youtubetv-5-350x350.png&f=1&nofb=1&ipt=3ce64901b170d36a8f631341562559c8031fded0a88b4538ae9d0c0b6bf1ac47&ipo=images"></a>
+</p>
 
