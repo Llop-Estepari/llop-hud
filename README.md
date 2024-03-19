@@ -94,7 +94,7 @@
 </p>
 
 
-<h3 align="center">Left side</h3>
+<h3 align="center">Left side mode</h3>
 <p align="center">
   <img src="https://i.gyazo.com/d55601938c6220767be24cc73f2bc9f6.jpg" width=500/><br>
 </p>
