@@ -1,7 +1,7 @@
 <h1 align="center">llop-hud </h1>
 
 
-**Minimalist** and configurable **UI** with **speedometer** for **QB framework**, **_RESPONSIVE_** with every resolution and aspect ratio.
+**Minimalist** and configurable **UI** with **speedometer** for **QBCore Framework**, **_RESPONSIVE_** with every resolution and aspect ratio.
 
 <p align="center">
   <img src="https://i.gyazo.com/f287e28d5049047a77ed7341e07c2105.jpg"/><br>
