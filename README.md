@@ -41,7 +41,7 @@
 
 1.  Download the entire project or [from the release](https://github.com/Llop-Estepari/llop-HUD/releases/tag/v1.0.0).
 2.  Place `llop-HUD` in your resources directory (you can change the name of the resouce).
-3.  Add `ensure llop-HUD` to your server.cfg
+3.  Add `ensure llop-HUD` to your server.cfg.
 
 ## Configuration Variables
 
